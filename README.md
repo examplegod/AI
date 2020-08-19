@@ -7,7 +7,7 @@
 
 ### Object detection API
 * [如何用 TensorFlow object detection API 的 Single Shot MultiBox Detector 來做 hand detection](https://blog.techbridge.cc/2019/02/16/ssd-hand-detection-with-tensorflow-object-detection-api/)
-* []
+* [openpose](https://blog.techbridge.cc/2019/01/18/openpose-installation/)
 
 ### Hand Recognition
 * paper
