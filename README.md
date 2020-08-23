@@ -27,6 +27,13 @@ https://www.kaggle.com/gti-upm/leaphandgestuav?
 * code
 [face_recognition](https://github.com/ageitgey/face_recognition)
 
+### Object Tracking
+* [simplest method on opencv](https://docs.opencv.org/master/df/d9d/tutorial_py_colorspaces.html)
+* TensorFlow object detection API
+  + [如何用 TensorFlow object detection API 的 Single Shot MultiBox Detector 來做 hand detection](https://blog.techbridge.cc/2019/02/16/ssd-hand-detection-with-tensorflow-object-detection-api/)
+  + [tensorflow-object-detection-api-tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html)
+  + [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
+
 
 ## Ref.
 * https://www.coderbridge.com/@Po-Jen?page=1
