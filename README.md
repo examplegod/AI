@@ -33,7 +33,13 @@ https://www.kaggle.com/gti-upm/leaphandgestuav?
   + [如何用 TensorFlow object detection API 的 Single Shot MultiBox Detector 來做 hand detection](https://blog.techbridge.cc/2019/02/16/ssd-hand-detection-with-tensorflow-object-detection-api/)
   + [tensorflow-object-detection-api-tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html)
   + [TensorFlow 2 Detection Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
-
+* R-CNN, Fast R-CNN, Faster R-CNN, Mask R-CNN, YOLO, SSD
+* [(mAP)mean average precision, Precision, recall](https://medium.com/@jonathan_hui/map-mean-average-precision-for-object-detection-45c121a31173)
+ 
 
 ## Ref.
 * https://www.coderbridge.com/@Po-Jen?page=1
+* https://chtseng.wordpress.com/category/%e5%bf%83%e5%be%97-%e6%a9%9f%e5%99%a8%e5%ad%b8%e7%bf%92/
+  + triplet loss
+  + Labelme & COCO
+  + Image Labeling
