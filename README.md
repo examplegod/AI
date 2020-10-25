@@ -5,25 +5,31 @@
 * CUDA-Driver 顯示卡驅動(playgame only need driver)
 * CUDA framework, exec compleix colculation.
 * CUDA Toolkit compiler,example,library
-### Docker NVIDIA
-* [NVIDIA driver install .run](https://www.nvidia.com.tw/Download/index.aspx?lang=tw#)
-
+## Docker NVIDIA
 [Nvidia-docker install step](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-the-nvidia-driver)
-Nvidia-docker only need cuda driver, don't need another cuda packages.
-recommended package manager and install cuda-driver 
-[Nvidia offical install document](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation)
-* preinstall
+
+offical recommand use package manager & only need cuda driver, don't need another cuda packages.
+
+## [Nvidia offical cuda installation document](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation)
+
+* pre-install
 * package manger installation.  
+* post-install
+
+### package manger
 unbuntu: [Meta packages](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#package-manager-metas) := Deb packages
 
 > deb includes cuda-tools cuda drivers cuda compiler etc.
 
-[cuda-drivers](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#driver-installation) (Installs all Driver packages. Handles upgrading(apt upgrade) to the next version of the Driver packages when they're released.)
+[cuda-drivers](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#driver-installation) :  
+Installs all Driver packages. Handles upgrading(apt upgrade) to the next version of the Driver packages when they're released.)
 
-check version
-* ubuntu-driver
-* apt-cache
+### apt-cache search version
+
+> apt-cache search --names-only 'cuda-driver'
+
 Driver-installation (specific driver version) in ubuntu use ubuntu-drivers see which driver is recommand.
+
 ### ubuntu-drivers
 ```bash
 sudo add-apt-repository ppa:graphics-drivers/ppa
@@ -31,40 +37,57 @@ sudo apt update
 sudo apt install ubuntu-drivers-common
 ubuntu-drivers devices
 ```
-### apt-cahe
 
-> apt-cache search --names-only 'cuda-driver'
+## When no packages are available, you should use an official "runfile".
 
-### When no packages are available, you should use an official "runfile".
-[official runfine web](https://www.nvidia.com/Download/index.aspx?lang=en-us)
-[step](https://www.rosdyanakusuma.com/tutorials/how-to-install-nvidia-driver-in-ubuntu-18-04/)
-* Install NVIDIA Driver via Installer (Runfile)
-* login gui tty  ctrl+alt+F7
+### RUNFILES INSTALLTION
+* [NVIDIA driver download runfile](https://www.nvidia.com.tw/Download/index.aspx?lang=tw#)
+* [NVIDIA offical runfile installation](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#runfile)
+
+Hit Ctrl+Alt+F1 and login using your credentials.  
+kill your current X server session by typing sudo service gdm stop or sudo gdm stop  
+Enter runlevel 3 by typing sudo init 3  
+
+> sudo init 3  
+
+Install your *.run file.  
+* you change to the directory where you have downloaded the file by typing for instance cd Downloads. If it is in another directory, go there. Check if you see the file when you type ls NVIDIA*  
+* Make the file executable with 
+
+ > chmod +x ./your-nvidia-file.run  
+ sudo ./your-nvidia-file.run
+
+* You might be required to reboot when the installation finishes. If not, run sudo service gdm start or sudo start gdm to start your X server again. sudo init 5
+* It's worth mentioning, that when installed this way, you'd have to __redo the steps after each kernel update.__ becuase [local install](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=runfilelocal)
 
 
-NVIDIA drivers are backward-compatible(向後支援) with CUDA toolkits versions.
+
+NVIDIA drivers are __backward-compatible(向後支援)__ with CUDA toolkits versions.  
 [CUDA Toolkit and Compatible Driver version](https://docs.nvidia.com/deploy/cuda-compatibility/index.html)
 
 ### ubuntu offcial installation
 ```bash
 $ sudo ubuntu-drivers devices
-$ sudo apt-get install nvidia-driver-418 nvidia-modprobe
+$ sudo apt-get install nvidia-driver-{recommand version} nvidia-modprobe
 ```
-## [Nvidia-Docker installation](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-1.0)#installing-version-10):
-* [package manager](https://nvidia.github.io/nvidia-docker/)
-$ sudo apt-get install nvidia-docker
+## After install CUDA Driver [Nvidia-Docker installation](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-1.0)#installing-version-10):
+* [package manager](https://nvidia.github.io/nvidia-docker/)  
+$ sudo apt-get install nvidia-docker  
+$ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit  
+$ sudo systemctl restart docker
 
 Basic usage:
 
-> nvidia-docker run --rm nvidia/cuda nvidia-smi
+> nvidia-docker run --rm nvidia/cuda nvidia-smi  
+docker --gpu  
+sudo docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
 
 
-
-
-
+### troubleshoot
+[runfile xserver](https://askubuntu.com/questions/149206/how-to-install-nvidia-run)
+tell us need to see official document.
 
 The __nvidia-smi__ tool gets installed by the cuda-driver installer
-
 
 ### Tools
 * [labelme](https://github.com/wkentaro/labelme)
