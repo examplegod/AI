@@ -99,6 +99,18 @@ The __nvidia-smi__ tool gets installed by the cuda-driver installer
 * [openpose](https://blog.techbridge.cc/2019/01/18/openpose-installation/)
 
 ### Hand Recognition
+
+### google MediaPipe
+* Goal:
+static hand recognition
+dynamic hand recognition
+hand controller
+
+* ref.
+* * https://google.github.io/mediapipe/solutions/hands#python
+* * https://github.com/google/mediapipe
+* * https://allen108108.github.io/blog/2020/06/06/%E6%89%8B%E9%83%A8%E9%97%9C%E9%8D%B5%E9%BB%9E%20(Hand%20Keypoints)%20%E7%9A%84%E9%A0%90%E6%B8%AC%E5%8F%8A%E5%85%B6%E6%87%89%E7%94%A8/
+
 * paper
 [Hand Keypoint Detection in Single Images using Multiview Bootstrapping](https://arxiv.org/pdf/1704.07809.pdf)
 
